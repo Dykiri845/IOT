@@ -48,5 +48,3 @@ graph TD
     %% Control Remoto
     UI -->|Comandos V5, V6, V7| DS
     DS -->|Callbacks BLYNK_WRITE| ACT
-
- Asignación de Pines Virtuales (Datastreams)Pin VirtualTipo de DatoDirecciónDescripción / Componente AsociadoV0Double / FloatESP32 $\rightarrow$ CloudLectura de Temperatura (°C) - Sensor DHT11V1Double / FloatESP32 $\rightarrow$ CloudLectura de Humedad (%) - Sensor DHT11V2Integer (0/1)ESP32 $\rightarrow$ CloudAlerta de Calor / Radiación (0 = Normal, 1 = Calor) - LM393V3StringESP32 $\rightarrow$ CloudDirección IP asignada en la red localV4StringESP32 $\rightarrow$ CloudEstado de la conexión a Blynk CloudV5Integer (0/1)Cloud $\rightarrow$ ESP32Interruptor de control remoto para el LED RojoV6Integer (0/1)Cloud $\rightarrow$ ESP32Interruptor de control remoto para el BuzzerV7Integer (0/1)Cloud $\rightarrow$ ESP32Botón virtual para Rotar Pantalla OLED
