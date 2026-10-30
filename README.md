@@ -49,11 +49,5 @@ graph TD
     UI -->|Comandos V5, V6, V7| DS
     DS -->|Callbacks BLYNK_WRITE| ACT
 
-## 📋 Asignación de Pines Virtuales (Datastreams)
-
-| Pin Virtual | Tipo de Dato | Dirección | Descripción / Componente Asociado |
-| :--- | :--- | :--- | :--- |
-| **V0** | Double / Float | ESP32 $\rightarrow$ Cloud | Lectura de Temperatura (°C) - Sensor DHT11 |
-| **V1** | Double / Float | ESP32 $\rightarrow$ Cloud | Lect
 
 
