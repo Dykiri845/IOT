@@ -166,9 +166,6 @@ Se diseñó una interfaz móvil e hiperconectada orientada a la operación en ti
 
 ## 📸 Evidencias de Funcionamiento
 
-### Dashboard Móvil / Web Funcionando
-![Dashboard Blynk](dashboard.png)
-
 ### Demostración en Video
 Puedes visualizar la demostración completa de control bidireccional y prueba de sensores en el siguiente enlace:
 
