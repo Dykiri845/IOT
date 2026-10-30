@@ -169,4 +169,5 @@ Se diseñó una interfaz móvil e hiperconectada orientada a la operación en ti
 ### Demostración en Video
 Puedes visualizar la demostración completa de control bidireccional y prueba de sensores en el siguiente enlace:
 
-🎥 **[Ver Video Demostrativo del Proyecto](https://youtu.be/TU_CODIGO_DE_VIDEO)**
+🎥 **[Ver Video de Demostración (MP4)](./desarrollo%20proyecto%20semana%2012/video_demostracion.mp4)**
+> 📽️ **Nota:** El video completo con las pruebas de funcionamiento se encuentra adjunto localmente en la carpeta `/desarrollo proyecto semana 12/` del archivo comprimido del proyecto.
