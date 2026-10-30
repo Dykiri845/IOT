@@ -17,7 +17,7 @@ Adicionalmente, el sistema permite el **control remoto de actuadores** (LED Rojo
 
 ## 🏗️ Diagrama de Arquitectura
 
-El flujo de información entre el hardware físico, la nube y los paneles de usuario se sintetiza en el siguiente esquema:
+El flujo de información entre el hardware físico, la nube y los paneles de usuario se sintetiza en el siguiente esquema UML:
 
 ```mermaid
 graph TD
@@ -48,6 +48,8 @@ graph TD
     %% Control Remoto
     UI -->|Comandos V5, V6, V7| DS
     DS -->|Callbacks BLYNK_WRITE| ACT
+
+
 
 
 ## 🚀 Instrucciones para Replicar el Proyecto
