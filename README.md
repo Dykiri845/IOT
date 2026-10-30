@@ -20,26 +20,31 @@ Adicionalmente, el sistema permite el **control remoto de actuadores** (LED Rojo
 El flujo de información entre el hardware físico, la nube y los paneles de usuario se sintetiza en el siguiente esquema:
 
 ```mermaid
-graph LR
-    subgraph Hardware ["ESP32 (Hardware Local)"]
-        DHT11["Sensor DHT11<br/>(Temp / Humedad)"]
-        LM393["Sensor LM393<br/>(Detección de Calor)"]
-        ACT["Actuadores Físicos<br/>(LED Rojo, Buzzer, OLED)"]
+graph TD
+    subgraph ESP32 ["ESP32 (Hardware Local)"]
+        DHT["Sensor DHT11"]
+        LM["Sensor LM393"]
+        ACT["Actuadores Físicos<br/>(LED Rojo, Buzzer, Pantalla OLED)"]
     end
 
-    subgraph Cloud ["Blynk Cloud Broker"]
-        DS["Datastreams / Virtual Pins<br/>(V0 - V7)"]
+    subgraph BlynkCloud ["Blynk Cloud Broker (Servidor)"]
+        DS["Datastreams / Pines Virtuales<br/>(V0, V1, V2, V3, V4, V5, V6, V7)"]
     end
 
-    subgraph Dashboard ["Interfaz de Usuario"]
-        App["App Móvil / Web Dashboard<br/>(History Chart, Gauges, Switches)"]
+    subgraph UserInterface ["Interfaz de Usuario (Cliente)"]
+        UI["App Móvil / Web Dashboard<br/>(Charts, Gauges, Switches)"]
     end
 
-    %% Flujos de Telemetría (Sensores -> Cloud -> Dashboard)
-    DHT11 -->|Publicación cada 2.5s| DS
-    LM393 -->|Evento Instantáneo| DS
-    DS -->|Actualización en vivo| App
+    %% Enlaces de Telemetría
+    DHT -->|V0: Temperatura / V1: Humedad| DS
+    LM -->|V2: Alerta Calor| DS
 
-    %% Flujos de Control (Dashboard -> Cloud -> ESP32)
-    App -->|Comandos Remotos| DS
+    %% Enlaces de Diagnóstico
+    ESP32 -->|V3: IP / V4: Estado| DS
+
+    %% Conexión Bidireccional
+    DS <-->|Sincronización Cloud| UI
+
+    %% Control Remoto
+    UI -->|Comandos V5, V6, V7| DS
     DS -->|Callbacks BLYNK_WRITE| ACT
